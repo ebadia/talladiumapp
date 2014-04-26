@@ -1,0 +1,39 @@
+<div class="bar bar-header bar-stable bar-dark">
+	<a class="icon icon-left-nav pull-left" href="#"></a>
+	<h1 class="title">Talladium/Compatibles</h1>
+	<button menu-toggle="'right'" class="button button-icon icon ion-navicon"></button>
+</div>
+
+<div class="bar bar-subheader item-input-inset">
+	<div class="">
+		<label class="item item-input">
+			<i class="icon ion-ios7-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="name">
+		</label>
+	</div>
+</div>
+
+<ion-content  class="has-header has-subheader has-footer">
+	<div class="list ">
+		<div class="item" ng-show="!ready"><i class="ion-refreshing"></i>Receiving data...</div>
+		<!--li ng-show="ready" class="list-divider"><br/>{{producto}} | {{fabricante}} | {{conexion}} <a class="button-positive">Buscar</a> </li-->
+		<div class="item" ng-show="ready" data-ng-repeat="p in productos | filter:name">
+			<div>
+				<i class="ion-information-circled"></i>
+				<h2 class="assertive">{{p["producto"]}}</h2>
+				<br/>
+				{{fabricante}}<br/>{{p["conexion"]}}<br/>{{p["modelo"]}}
+				<br/>
+				<div class="card padding">
+					<div class="item item-divider">&nbsp;{{p["referencia"]}}&nbsp;</div>
+					<div class="row item-text-wrap positive">{{p["descripcion"]}}</div><br/>
+					<div class="row" style="background-color: #fafafa;"><div class="col">Altura Hexágono</div><div class="col" style="text-align: right;">{{p["altura"]}}</div></div>
+					<div class="row"><div class="col">Hexágono</div><div class="col" style="text-align: right;">{{p["hexagono"]}}</div></div>
+					<div class="row" style="background-color: #fafafa;"><div class="col">Plataforma</div><div class="col" style="text-align: right;">{{p["plataforma"]}}</div></div>
+					<div class="row"><div class="col">Altura Cono</div><div class="col" style="text-align: right;">{{p["alturacono"]}}</div></div>
+					<div class="row" style="background-color: #fafafa;"><div class="col">Angulo Cono</div><div class="col" style="text-align: right;">{{p["angulocono"]}}</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

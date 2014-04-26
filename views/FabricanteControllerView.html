@@ -1,0 +1,27 @@
+<div class="bar bar-header bar-stable bar-dark">
+	<a class="icon icon-left-nav pull-left" href="#/product/{{producto}}"></a>
+	<h1 class="title">Talladium/Compatibles</h1>
+	<button menu-toggle="'right'" class="button button-icon icon ion-navicon"></button>
+</div>
+
+<div class="bar bar-subheader item-input-inset">
+	<div class="">
+		<label class="item item-input">
+			<i class="icon ion-ios7-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="name">
+		</label>
+	</div>
+</div>
+
+<ion-content  class="has-header has-subheader has-footer">
+	<div class="list">
+		<div class="item" ng-show="!ready"><i class="ion-refreshing"></i>Receiving data...</div>
+		<div ng-show="ready" class="item item-divider">
+			<button class="button button-small button-balanced" href='' ng-click="listFromFabricante('{{producto}}','{{fabricante}}')">Buscar</button> 
+			{{producto}} | {{fabricante}}
+		</div>
+		<a class="item" ng-show="ready" ng-repeat="p in productos | filter:name" href="#/conexion/{{producto}}/{{fabricante}}/{{p['conexion']}}">
+				{{p["conexion"]}}
+		</a>
+	</div>
+</ion-content>

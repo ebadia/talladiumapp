@@ -1,0 +1,12 @@
+{
+  "name"         : "talladium-implants",
+  "version"      : "0.0.0",
+  "description"  : "Buscador de compatibilidades para implantes.",
+  "main"         : "server.js",
+  "author"       : "Enric Badia",
+  "dependencies" : {
+    "express"    	: ">3.3",
+    "rethinkdb"    	: ">1.10",
+    "xls-to-json"  	: "*"
+  }
+}

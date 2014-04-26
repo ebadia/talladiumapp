@@ -1,0 +1,23 @@
+<div class="bar bar-header bar-stable bar-dark">
+	<a class="icon icon-left-nav pull-left" href="#/faqssubcategoria/{{subcategoria}}"></a>
+	<h1 class="title">Talladium/Faqs</h1>
+	<button menu-toggle="'right'" class="button button-icon icon ion-navicon"></button>
+</div>
+
+<ion-content  class="has-header has-footer">
+	<div class="item" ng-show="!ready"><i class="ion-refreshing"></i>Receiving data...</div>
+	<!--li ng-show="ready" class="list-divider"><br/>{{producto}} | {{fabricante}} | {{conexion}} <a class="button-positive">Buscar</a> </li-->
+	<div class="item" ng-show="ready">
+		<div class="item item-divider">En caso de...</div>
+		<div class="row">{{ categoria }}</div>
+		<div class="row">{{ subcategoria }}</div>
+		<div class="row">{{ causa }}</div>
+		<div class="row">&nbsp;</div>
+		<div class="item item-divider">Soluciones posibles...</div>
+	</div>
+	<div class="item" ng-show="ready" data-ng-repeat="p in faqs | filter:name">
+		<div class="card padding">
+			<div class="row item-text-wrap positive">{{ p.solucion }}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="bar bar-header bar-stable bar-dark">
+	<a class="icon icon-left-nav pull-left" href="#/faqs"></a>
+	<h1 class="title">Talladium/Faqs</h1>
+	<button menu-toggle="'right'" class="button button-icon icon ion-navicon"></button>
+</div>
+
+<div class="bar bar-subheader item-input-inset">
+	<div class="">
+		{{ categoria }}
+	</div>
+</div>
+
+
+<ion-content class="has-header has-subheader has-footer">
+	<div class="list">
+		<div class="item" ng-show="!ready"><i class="ion-refreshing"></i>Receiving data...</div>
+		<a class="item" ng-show="ready" ng-repeat="faq in faqs | filter:name" href="#/faqssubcategoria/{{faq.subcategoria}}">
+			{{faq.subcategoria}}
+		</a>
+	</div>
+</ion-content>
